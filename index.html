@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="blended_layout.css">
+	<title>ServiceNow Capabilities Map</title>
+	<meta name="description" content="Write some words to describe your html page">
+<style>
+	*{
+		padding : 0;
+		margin : 0;
+		border : 0;
+	}
+
+	body{
+		background-image : url('bi-background-hexagon.png ');
+		background-attachment : fixed;
+		background-size : 100% auto;
+	}
+
+	.blended_grid{
+		display : block;
+		width : 1290px;
+		overflow : auto;
+		margin : 60px auto 0 auto;
+	}
+
+	.topBanner{
+		background-color : rgba(255,255,255,1);
+		float : left;
+		clear : none;
+		height : 100px;
+		width : 100%;
+		border:1px solid black;
+		margin-right: -1px;
+	}
+
+	.rowBanner{
+		background-color : #555555;
+		color: white;
+		vertical-align: middle;
+		line-height: 25px; 
+		float : center;
+		text-align: center;
+		text-decoration: none;
+		font-size: 16px;
+		clear : none;
+		height : 25px;
+		width : 100%;
+		border:1px solid black;
+		margin-top: -2px;
+		margin-left: -1px;
+		margin-right: -1px;
+	}
+
+	.sideBanner{
+		background-color : #555555;
+		color: white;
+		vertical-align: middle;
+		line-height: 75px;
+		float : center;
+		text-align: center;
+		text-decoration: none;
+		font-size: 16px;
+		clear : none;
+		height : 25px;
+		width : 100%;
+		border:1px solid black;
+	}
+
+	.feedHost{
+		float : left;
+		clear : none;
+		width : 960px;
+		min-height : 80px;
+	}
+
+	.feed_03{
+		background-color : rgba(255,255,255,1);
+		float : none;
+		clear : both;
+		height : 100px;
+		width : 100%;
+		border:1px solid black;
+	}
+
+	.feed_04{
+		background-color : rgba(255,255,255,1);
+		float : none;
+		clear : both;
+		height : 150px;
+		width : 100%;
+		border:1px solid black;
+		margin-top: -1px;
+	}
+
+	.feed_05{
+		background-color : rgba(255,255,255,1);
+		float : none;
+		clear : both;
+		height : 100px;
+		width : 100%;
+		border:0px solid black;
+		margin-top: -1px;
+	}
+
+	.feed_00{
+		background-color : rgba(255,255,255,1);
+		float : none;
+		clear : both;
+		height : 100px;
+		width : 100%;
+		border:0px solid black;
+		margin-top: -1px;
+	}
+
+	.feed_01{
+		background-color : rgba(255,255,255,1);
+		float : none;
+		clear : both;
+		height : 100px;
+		width : 100%;
+		border:1px solid black;
+	}
+
+	.feed_02{
+		background-color : rgba(255,255,255,1);
+		float : none;
+		clear : both;
+		height : 100px;
+		width : 100%;
+		border:1px solid black;
+	}
+
+	.leftColumn{
+		background-color : rgba(255,255,255,1);
+		float : left;
+		clear : none;
+		height : 598px;
+		width : 148px;
+		border: 1px solid black;
+		margin-top: -1px;
+		margin-right: -1px;
+		margin-left: 1px;
+	}
+
+	.button {
+		background-color: #4CAF50; /* Green */
+		border: none;
+		color: white;
+		/* padding: 4px 4px; */
+		width: 100px;
+		height : 50px;
+		border-radius: 8px;
+		text-align: center;
+		vertical-align: middle;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 12px;
+		margin: 4px 4px;
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+		cursor: pointer;
+	}
+
+	.button1 {
+		background-color: white; 
+		color: black; 
+		border: 2px solid #4CAF50;
+	}
+
+	.button1:hover {
+		background-color: #4CAF50;
+		color: white;
+	}
+
+	.button2 {
+		background-color: white; 
+		color: black; 
+		border: 2px solid #008CBA;
+	}
+
+	.button2:hover {
+		background-color: #008CBA;
+		color: white;
+	}
+
+	.button3 {
+		background-color: white; 
+		color: black; 
+		border: 2px solid #f44336;
+	}
+
+	.button3:hover {
+		background-color: #f44336;
+		color: white;
+	}
+
+	.button4 {
+		background-color: white;
+		color: black;
+		border: 2px solid #e7e7e7;
+	}
+
+	.button4:hover {background-color: #e7e7e7;}
+
+	.button5 {
+		background-color: white;
+		color: black;
+		border: 2px solid #555555;
+	}
+
+	.button5:hover {
+		background-color: #555555;
+		color: white;
+	}
+</style>
+	<script>
+		var changeMessage = function(oElement) {
+			var i;
+			for (i = 1; i < 57; i++) {
+				var num = "b" + i
+				var str = document.getElementById(num).innerHTML
+				if (oElement.value == "london") {
+				  document.getElementById(num).innerHTML = str.replace(/jakarta/g, "london");
+				  document.getElementById(num).innerHTML = str.replace(/kingston/g, "london");
+
+				} else if (oElement.value == "kingston") {
+				  document.getElementById(num).innerHTML = str.replace(/jakarta/g, "kingston");
+				  document.getElementById(num).innerHTML = str.replace(/london/g, "kingston");
+				} else if (oElement.value == "jakarta") {
+				  document.getElementById(num).innerHTML = str.replace(/london/g, "jakarta");
+				  document.getElementById(num).innerHTML = str.replace(/kingston/g, "jakarta");
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<select id="leave" onchange="changeMessage(this);">
+		  <option value="london">London</option>
+		  <option value="kingston">Kingston</option>
+		  <option value="jakarta">Jakarta</option>
+		</select>
+	</div>
+	<div class="blended_grid">
+		<div class="leftColumn">
+			<div class="rowBanner" style="height:50px;">Engagement and Experience</div>
+			<span id="b49"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button2">Mobile</button></a></span>
+				<span id="b53"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button3">Portal</button></a></span>
+				<span id="b54"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Workspace</button></a></span>
+				<span id="b55"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Catalog</button></a></span>
+				<span id="b56"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button2">Request</button></a></span>
+			
+		</div>
+		<div class="feedHost">
+			<div class="feed_03">
+				<div class="rowBanner">Business Management</div>
+				<span id="b1"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/planning-and-policy/concept/c_DemandManagement.html" target="_blank"><button class="button button3">Demand</br>Management</button></a></span>
+				<span id="b2"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/it-finance/concept/c_ITFinance.html" target="_blank"><button class="button button1">Financial</br>Management</button></a></span>
+				<span id="b3"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/agile-development/concept/agile-development.html" target="_blank"><button class="button button3">Agile</br>Development</button></a></span>
+				<span id="b4"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/application-portfolio-management/concept/application-portfolio-management.html" target="_blank"><button class="button button3">Application</br>Portfolio</button></a></span>
+				<span id="b5"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/project-portfolio-suite/concept/c_ProjectPortfolioSuite.html" target="_blank"><button class="button button3">Project &</br>Portfolio</button></a></span>
+				<span id="b6"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/resource-management/concept/c_ResourceManagement.html" target="_blank"><button class="button button3">Resource</br>Management</button></a></span>
+				<span id="b7"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/administer/task-table/concept/time-card-management.html" target="_blank"><button class="button button3">Time</br>Tracking</button></a></span>
+			</div>
+			<div class="feed_04">
+				<div style="height:149px; width:130px;border:1px solid black;margin-left: -1px;float:left;margin-right:2px;">
+					<div class="rowBanner">Business Apps</div>
+					<span id="b8"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Studio</button></a></span>
+					<span id="b9"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button3">Delegated</br>Development</button></a></span>
+				</div>
+				<div style="height:149px; width:350px;border:1px solid black;float:left;margin-right:2px;">
+					<div class="rowBanner">IT Service Management</div>
+					<span id="b10"><a href="https://docs.servicenow.com/bundle/london-it-service-management/page/product/problem-management/concept/c_ProblemManagement.html" target="_blank"><button class="button button2">Problem</button></a></span>
+					<span id="b11"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button2">SLA</button></a></span>
+					<span id="b12"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button1">Release</button></a></span>
+					<span id="b13"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button2">Incident</button></a></span>
+					<span id="b14"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button2">Change</button></a></span>
+					<span id="b15"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button2">Asset</button></a></span>
+				</div>
+				<div style="height:149px; width:250px;border:1px solid black;float:left;margin-right:2px;">
+					<div class="rowBanner">HR Service Delivery</div>
+					<span id="b16"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button2">Case</button></a></span>
+					<span id="b17"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button2">Lifecycle</br>Events</button></a></span>
+					<span id="b18"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button1">Employee</br>Service</br>Center</button></a></span>
+				</div>
+				<div style="height:149px; width:130px;border:1px solid black;float:left;">
+					<div class="rowBanner">Customer Service</div>
+					<span id="b19"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button2">Customer</br>Care</button></a></span>
+					<span id="b20"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button3">Field</br>Service</button></a></span>
+				</div>
+			</div>
+			<div class="feed_05">
+				<div style="height:149px; width:348px;border:1px solid black;float:left;margin-right:2px;">
+					<div class="rowBanner">Operations Management</div>
+					<span id="b21"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button2">Discovery</button></a></span>
+					<span id="b22"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button3">Service</br>Mapping</button></a></span>
+					<span id="b23"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Orchestration</button></a></span>
+					<span id="b24"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button1">Cloud</br>Management</button></a></span>
+					<span id="b25"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Event</br>Management</button></a></span>
+				</div>
+				<div style="height:149px; width:350px;border:1px solid black;float:left;margin-right:2px;">
+					<div class="rowBanner">Security and Risk</div>
+					<span id="b26"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button2">Security</br>Incident</button></a></span>
+					<span id="b27"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button3">Threat</br>Intelligence</button></a></span>
+					<span id="b28"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Vendor</br>Risk</button></a></span>
+					<span id="b29"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Vulnerability</br>Response</button></a></span>
+					<span id="b30"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button2">Governance</br>Risk &</br>Compliance</button></a></span>
+				</div>
+				<div style="height:149px; width:225px;border:1px solid black;float:left;margin-right:2px;">
+					<div class="rowBanner">Enterprise Service Management</div>
+					<span id="b31"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Facilities</button></a></span>
+					<span id="b32"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button5">Marketing</button></a></span>
+					<span id="b33"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button5">Legal</button></a></span>
+					<span id="b34"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button5">Finance</button></a></span>
+				</div>
+			</div>
+			<div class="feed_00">
+				<div style="height:100px; width:250px;border:1px solid black;float:left;margin-right:2px;">
+					<div class="rowBanner">Analytics</div>
+					<span id="b35"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button2">Reporting</button></a></span>
+					<span id="b36"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button1">Performance</br>Analytics</button></a></span>
+				</div>
+				<div style="height:100px; width:130px;border:1px solid black;float:left;margin-right:2px;">
+					<div class="rowBanner">Encryption</div>
+					<span id="b37"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button5">Edge</br>Encryption</button></a></span>
+				</div>
+				<div style="height:100px; width:350px;border:1px solid black;float:left;margin-right:2px;">
+					<div class="rowBanner">Security and Risk</div>
+					<span id="b38"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button1">Virtual</br>Agent</button></a></span>
+					<span id="b39"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button2">Agent</br>Intelligence</button></a></span>
+					<span id="b40"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">Benchmarks</button></a></span>
+				</div>
+			</div>
+			<div class="feed_01">
+				<div class="rowBanner">Platform</div>
+				<span id="b41"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/planning-and-policy/concept/c_DemandManagement.html" target="_blank"><button class="button button2">Knowledge</button></a></span>
+				<span id="b42"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/it-finance/concept/c_ITFinance.html" target="_blank"><button class="button button2">Collaboration</button></a></span>
+				<span id="b43"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/agile-development/concept/agile-development.html" target="_blank"><button class="button button2">Notification</button></a></span>
+				<span id="b44"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/application-portfolio-management/concept/application-portfolio-management.html" target="_blank"><button class="button button3">VTB</button></a></span>
+				<span id="b45"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/project-portfolio-suite/concept/c_ProjectPortfolioSuite.html" target="_blank"><button class="button button1">CTI</button></a></span>
+				<span id="b46"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/product/resource-management/concept/c_ResourceManagement.html" target="_blank"><button class="button button1">ATF</button></a></span>
+				<span id="b47"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/administer/task-table/concept/time-card-management.html" target="_blank"><button class="button button2">Workflow</button></a></span>
+				<span id="b48"><a href="https://docs.servicenow.com/bundle/london-it-business-management/page/administer/task-table/concept/time-card-management.html" target="_blank"><button class="button button2">CMDB</button></a></span>
+			</div>
+		</div>
+		<div class="leftColumn">
+			<div class="rowBanner" style="height:50px;">Integrations & Systems of Record</div>
+				<span id="b49"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button2">Web Services</button></a></span>
+				<span id="b50"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_DelegatedDevelopment.html" target="_blank"><button class="button button2">Mid Server</button></a></span>
+				<span id="b51"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">ODBC</button></a></span>
+				<span id="b52"><a href="https://docs.servicenow.com/bundle/london-application-development/page/build/applications/concept/c_ServiceNowStudio.html" target="_blank"><button class="button button3">API</button></a></span>
+		</div>
+	</div>
+</body>
+</html>
